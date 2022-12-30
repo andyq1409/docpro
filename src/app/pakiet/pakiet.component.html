@@ -1,0 +1,187 @@
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="card shadow-lg border-0 rounded-lg mt-5">
+          <div class="card-header">
+            <p class="text-center fw-bold my-1 aq-login-title">Pakiet</p>
+          </div>
+          <div class="card-body">
+            <select
+              id="selpack"
+              class="form-select form-select-sm"
+              autofocus
+              aria-label=".form-select-sm example"
+              [(ngModel)] = "docum.package"
+            >
+              <option value="NN" selected></option>
+              <option value="AMOTOR_INS">
+                AMOTOR_INS&nbsp;&nbsp;Motor insurance
+              </option>
+              <option value="AS">AS &nbsp;&nbsp;Akcja szkolna 2001/2002</option>
+              <option value="AS200/2001">
+                AS200/2001&nbsp;&nbsp;Akcja szkolna 2000/2001
+              </option>
+              <option value="AS202/2003">
+                BS202/2003&nbsp;&nbsp;Akcja szkolna 2002/2003
+              </option>
+              <option value="AS203/2004">
+                AS203/2004&nbsp;&nbsp;Akcja szkolna 2003/2004
+              </option>
+              <option value="AS204/2005">
+                CS204/2005&nbsp;&nbsp;Akcja szkolna 2004/2005
+              </option>
+              <option value="AS205/2006">
+                AS205/2006&nbsp;&nbsp;Akcja szkolna 2005/2006
+              </option>
+              <option value="AS99">AS99 &nbsp;&nbsp;Akcja szkolna 1999</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card shadow-lg border-0 rounded-lg mt-5">
+          <div class="card-header">
+            <p class="text-center fw-bold my-1 aq-login-title">Produkt</p>
+          </div>
+          <div class="card-body">
+            <div class="container">
+              <div class="row justify-content-md-center mb-4">
+                <div class="col-lg-4">
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label=".form-select-sm example"
+                    [(ngModel)] = "docum.product"
+                  >
+                    <option value="288" selected>
+                      AUM &nbsp;2&nbsp;&nbsp;Ubezpieczenia budowlano-montażowe
+                    </option>
+                    <option value="308">
+                      BUM &nbsp;4&nbsp;&nbsp;Ubezpieczenia budowlano-montażowe
+                    </option>
+                    <option value="677">
+                      CUM &nbsp;5&nbsp;&nbsp;Ubezpieczenia budowlano-montażowe
+                    </option>
+                    <option value="784">
+                      SUM &nbsp;6&nbsp;&nbsp;Ubezpieczenia budowlano-montażowe
+                    </option>
+                    <option value="823">
+                      ZUM &nbsp;7&nbsp;&nbsp;Ubezpieczenia budowlano-montażowe
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col col-lg-26">
+                  <label for="exampleFormControlTextarea1" class="form-label"
+                    >Opis produktu</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    [(ngModel)] = "docum.descr"
+                  ></textarea>
+                </div>
+                <div class="col col-lg-6">
+                  <label for="exampleFormControlTextarea2" class="form-label"
+                    >Podstawa wprowadzenia</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea2"
+                    rows="3"
+                    [(ngModel)] = "docum.basein"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row justify-content-md-center mb-4">
+                <div class="col-lg-4">
+                  <label for="office" class="form-label"
+                    >Biuro wprowadzające</label
+                  >
+                  <select
+                    id="office"
+                    class="form-select form-select-sm"
+                    aria-label=".form-select-sm example"
+                    [(ngModel)] = "docum.office"
+                  >
+                    <option
+                      value="Biuro Ubezpieczeń Indywidualnych i Samochodowych"
+                      selected
+                    >
+                      Biuro Ubezpieczeń Indywidualnych i Samochodowych
+                    </option>
+                    <option value="Biuro Ubezpieczeń Gospodarczych">
+                      Biuro Ubezpieczeń Gospodarczych
+                    </option>
+                    <option
+                      value="Departament Masowych Ubezpieczeń Majątkowych"
+                    >
+                      Departament Masowych Ubezpieczeń Majątkowych
+                    </option>
+                    <option value="Biuro Ubezpieczeń Finansowych">
+                      Biuro Ubezpieczeń Finansowych
+                    </option>
+                    <option
+                      value="Biuro Ubezpieczeń Majątkowych i Technicznych"
+                    >
+                      Biuro Ubezpieczeń Majątkowych i Technicznych
+                    </option>
+                    <option
+                      value="Biuro Ubezpieczeń Morskich, Lotniczych i Reasekuracji"
+                    >
+                      Biuro Ubezpieczeń Morskich, Lotniczych i Reasekuracji
+                    </option>
+                    <option value="BOUS-COSZ">BOUS-COSZ</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-lg-6">
+                  <label for="exampleFormControlTextarea3" class="form-label"
+                    >Uwagi o rejestracji</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea3"
+                    rows="3"
+                    [(ngModel)] = "docum.regnotes"
+                  ></textarea>
+                </div>
+                <div class="col col-lg-6">
+                  <label for="exampleFormControlTextarea4" class="form-label"
+                    >Uwagi o różnicach w stosunku do poprzedniej wersji</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea4"
+                    rows="3"
+                    (focusout)="focusNext('btnzaq')"
+                    [(ngModel)] = "docum.diffnotes"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-lg-6">
+                  <button  type="button" class="btn btn-light" (click)="clear()">
+                    Wyczyść
+                  </button>
+                </div>
+                <div class="col-lg-5"></div>
+                <div class="col-lg-1">
+                  <button id="btnzaq" type="button" class="btn btn-primary" (keydown.tab)="focusNext('selpack')">
+                    Raport
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
