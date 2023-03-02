@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { DocParams } from '../models';
+import {Component, OnInit} from '@angular/core';
+import {DocParams} from '../models';
+import {GendocService} from '../services/gendoc.service';
+
+import {saveAs} from 'file-saver';
 
 @Component({
   selector: 'app-pakiet',
@@ -9,9 +12,27 @@ import { DocParams } from '../models';
 export class PakietComponent implements OnInit {
   docum: DocParams = new DocParams();
 
-  constructor() {}
+  constructor(private fileService: GendocService) {
+  }
 
-  ngOnInit(): void {}
+  download() {
+    const bodyElement = document.body;
+    if (bodyElement) {
+      bodyElement.classList.add("loading");
+    }
+    this.fileService.downloadFile(this.docum.package, this.docum.product).subscribe((response: any) => {
+      let blob: any = new Blob([response], {type: 'application/pdf'});
+      saveAs(blob, this.docum.package);
+      if (bodyElement) {
+        bodyElement.classList.remove("loading");
+      }
+    }),
+      (error: any) => console.log('Error downloading the file'),
+      () => console.info('File downloaded successfully');
+  }
+
+  ngOnInit(): void {
+  }
 
   public focusNext(pid: string) {
     console.log(pid);
